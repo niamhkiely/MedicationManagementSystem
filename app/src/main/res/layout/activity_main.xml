@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/mydateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="305dp"
+        android:layout_marginLeft="305dp"
+        android:layout_marginTop="64dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/drugname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="28dp"
+        android:text="Drug Name: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patientnumber" />
+
+    <EditText
+        android:id="@+id/txtDrugname"
+        android:layout_width="167dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/drugname"
+        app:layout_constraintTop_toBottomOf="@+id/txtpatientno" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="64dp"
+        android:text="Create Prescription"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/patientnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="26dp"
+        android:text="Patient Number:  "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/txtpatientno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/patientnumber"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/concentration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="29dp"
+        android:text="Concentration:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drugname" />
+
+    <EditText
+        android:id="@+id/txtConcentration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/concentration"
+        app:layout_constraintStart_toEndOf="@+id/concentration"
+        app:layout_constraintTop_toBottomOf="@+id/txtDrugname" />
+
+    <TextView
+        android:id="@+id/dosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="38dp"
+        android:text="Dosage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/concentration" />
+
+    <EditText
+        android:id="@+id/txtDosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dosage"
+        app:layout_constraintStart_toEndOf="@+id/dosage"
+        app:layout_constraintTop_toBottomOf="@+id/txtConcentration" />
+
+    <TextView
+        android:id="@+id/preparation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="154dp"
+        android:text="Preparation:"
+        app:layout_constraintStart_toEndOf="@+id/txtDrugname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPreparation"
+        android:layout_width="231dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/preparation"
+        app:layout_constraintTop_toBottomOf="@+id/mydateText" />
+
+    <TextView
+        android:id="@+id/startdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="33dp"
+        android:text="Start Date:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosage" />
+
+    <EditText
+        android:id="@+id/txtSDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="date"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/startdate"
+        app:layout_constraintTop_toBottomOf="@+id/txtDosage" />
+
+    <TextView
+        android:id="@+id/eDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="45dp"
+        android:text="End Date:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startdate" />
+
+    <Button
+        android:id="@+id/btnSubmitPrescription"
+        android:layout_width="191dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginLeft="188dp"
+        android:layout_marginTop="68dp"
+        android:text="Submit Prescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtdate" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="191dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="316dp"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSubmitPrescription"
+        app:layout_constraintStart_toEndOf="@+id/btnSubmitPrescription"
+        app:layout_constraintTop_toBottomOf="@+id/txtPreparation" />
+
+    <EditText
+        android:id="@+id/txtEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/eDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtSDate" />
+
+    <TextView
+        android:id="@+id/doctornumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="39dp"
+        android:text="Doctor Number:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eDate" />
+
+    <EditText
+        android:id="@+id/txtDrNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/doctornumber"
+        app:layout_constraintTop_toBottomOf="@+id/txtEndDate" />
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="34dp"
+        android:text="Date:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctornumber" />
+
+    <EditText
+        android:id="@+id/txtdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/Date"
+        app:layout_constraintTop_toBottomOf="@+id/txtDrNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
