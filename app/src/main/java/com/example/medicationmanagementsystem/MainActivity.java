@@ -3,6 +3,7 @@ package com.example.medicationmanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -27,7 +28,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editpatientid, editdate, editdrugname, editdosage, editconcentration, editprep, editstartdate, editenddate, editdoctorid;
-    Button btnSubmitData;
+    Button btnSubmitData, btnViewPrescription, btnAddPatient;
 
     private static final String TAG = "MainActivity";
 
@@ -48,11 +49,28 @@ public class MainActivity extends AppCompatActivity {
         editenddate = findViewById(R.id.txtEndDate);
         editdoctorid = findViewById(R.id.txtDrNumber);
         btnSubmitData = findViewById(R.id.btnSubmitPrescription);
+        btnViewPrescription = findViewById(R.id.btnView);
+        btnAddPatient = findViewById(R.id.btnAddPatient);
         AddData();
 
+        btnViewPrescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewListContents.class);
+                startActivity(intent);
+            }
+        });
 
 
         //END
+        btnAddPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent PatientIntent = new Intent(MainActivity.this, NewPatient.class);
+                startActivity(PatientIntent);
+            }
+        });
+
         //the code below is based on Show Current Date in android textView using Android Studio, Devodex, https://www.youtube.com/watch?v=myhyZaAfJ-c
         String date_n = new SimpleDateFormat("MMM,dd,yyyy", Locale.getDefault()).format(new Date());
         TextView tv_date = findViewById(R.id.mydateText);

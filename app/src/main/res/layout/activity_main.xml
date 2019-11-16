@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="27dp"
         android:text="Drug Name: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/patientnumber" />
@@ -34,7 +34,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="9dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
@@ -116,14 +116,13 @@
     <EditText
         android:id="@+id/txtDosage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
-        android:layout_marginLeft="77dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dosage"
         app:layout_constraintStart_toEndOf="@+id/dosage"
         app:layout_constraintTop_toBottomOf="@+id/txtConcentration" />
 
@@ -163,19 +162,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dosage" />
 
-    <EditText
-        android:id="@+id/txtSDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:inputType="date"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/startdate"
-        app:layout_constraintTop_toBottomOf="@+id/txtDosage" />
-
     <TextView
         android:id="@+id/eDate"
         android:layout_width="wrap_content"
@@ -191,24 +177,23 @@
         android:id="@+id/btnSubmitPrescription"
         android:layout_width="191dp"
         android:layout_height="0dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:layout_marginTop="68dp"
         android:text="Submit Prescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtdate" />
 
     <Button
-        android:id="@+id/btnExit"
+        android:id="@+id/btnView"
         android:layout_width="191dp"
         android:layout_height="0dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="316dp"
-        android:text="Exit"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSubmitPrescription"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="64dp"
+        android:text="View Prescriptions"
         app:layout_constraintStart_toEndOf="@+id/btnSubmitPrescription"
-        app:layout_constraintTop_toBottomOf="@+id/txtPreparation" />
+        app:layout_constraintTop_toBottomOf="@+id/txtdate" />
 
     <EditText
         android:id="@+id/txtEndDate"
@@ -216,7 +201,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
@@ -240,7 +225,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
@@ -264,11 +249,35 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="91dp"
         android:layout_marginLeft="91dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="19dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/Date"
         app:layout_constraintTop_toBottomOf="@+id/txtDrNumber" />
+
+    <EditText
+        android:id="@+id/txtSDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/startdate"
+        app:layout_constraintTop_toBottomOf="@+id/txtDosage" />
+
+    <Button
+        android:id="@+id/btnAddPatient"
+        android:layout_width="154dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="308dp"
+        android:text="Add Patient "
+        app:layout_constraintStart_toEndOf="@+id/btnView"
+        app:layout_constraintTop_toBottomOf="@+id/txtPreparation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
