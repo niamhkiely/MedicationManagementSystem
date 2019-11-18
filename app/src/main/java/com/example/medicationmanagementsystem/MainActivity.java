@@ -1,5 +1,5 @@
 package com.example.medicationmanagementsystem;
-
+////code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge, https://www.youtube.com/watch?v=kDZES1wtKUY
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -97,3 +97,4 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 }
+//END

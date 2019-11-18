@@ -1,5 +1,5 @@
 package com.example.medicationmanagementsystem;
-
+//code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge, https://www.youtube.com/watch?v=kDZES1wtKUY
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,7 +43,7 @@ public class NewPatient extends AppCompatActivity {
                                 editdob.getText().toString(), editaddress.getText().toString(),
                                 editpatienttype.getText().toString(), editpatientmedcon.getText().toString(),
                                 editcaringid.getText().toString());
-                       if(isInserted = true )
+                       if(isInserted = true)
                            Toast.makeText(NewPatient.this, "Data Inserted", Toast.LENGTH_LONG).show();
                        else
                            Toast.makeText(NewPatient.this, "Data not Inserted", Toast.LENGTH_LONG).show();
@@ -52,4 +52,5 @@ public class NewPatient extends AppCompatActivity {
         );
     }
 }
+//END
 
