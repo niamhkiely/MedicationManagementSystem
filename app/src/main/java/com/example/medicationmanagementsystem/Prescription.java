@@ -1,6 +1,7 @@
 package com.example.medicationmanagementsystem;
-//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=8K-6gdTlGEA, https://www.youtube.com/watch?v=hHQqFGpod14, https://www.youtube.com/watch?v=jpt3Md9aDIQ
+//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=jpt3Md9aDIQ
 public class Prescription {
+    //creating variables
     private String patientID;
     private String presdate;
     private String drugname;

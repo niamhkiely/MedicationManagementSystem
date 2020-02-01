@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Options">
+        <menu>
+            <item
+                android:id="@+id/nav_createprescription"
+                android:icon="@drawable/ic_create_prescription"
+                android:title="Create Prescription" />
+            <item
+                android:id="@+id/viewprescriptions"
+                android:icon="@drawable/ic_view_prescriptions"
+                android:title="View Prescriptions" />
+            <item
+                android:id="@+id/nav_addpatients"
+                android:icon="@drawable/ic_patient_add"
+                android:title="Create new patient" />
+            <item
+                android:id="@+id/nav_viewpatients"
+                android:icon="@drawable/ic_patients_view"
+                android:title="View Patients" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

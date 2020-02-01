@@ -4,78 +4,76 @@
     android:layout_height="match_parent"
     android:weightSum="300">
 
+  <TextView
+      android:id="@+id/textpatientID"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
+  <TextView
+      android:id="@+id/textdate"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textpatientID"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textdrugname"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textdate"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textcontentration"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textdrugname"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textdosage"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textcontentration"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textprep"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textdosage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textstartdate"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textprep"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textenddate"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textstartdate"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textenddate"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textdoctorid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="33"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/textdoctorid"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="33"
+      android:textSize="20sp"
+      android:textStyle="bold" />
 
 </LinearLayout>

@@ -9,15 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ViewListContents"></activity>
-        <activity android:name="NewPatient"></activity>
+        <activity android:name=".ViewPatientListContents" />
+        <activity android:name=".ViewListContents" />
+        <activity android:name=".NewPatient" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Register" />
+        <activity android:name=".NewCaringList"/>
+        <activity android:name=".ViewCaringList"/>
+        <activity android:name=".DoctorHome"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".NurseHome"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

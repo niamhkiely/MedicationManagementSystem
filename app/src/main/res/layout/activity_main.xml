@@ -184,17 +184,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtdate" />
 
-    <Button
-        android:id="@+id/btnView"
-        android:layout_width="191dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="77dp"
-        android:layout_marginLeft="77dp"
-        android:layout_marginTop="64dp"
-        android:text="View Prescriptions"
-        app:layout_constraintStart_toEndOf="@+id/btnSubmitPrescription"
-        app:layout_constraintTop_toBottomOf="@+id/txtdate" />
-
     <EditText
         android:id="@+id/txtEndDate"
         android:layout_width="wrap_content"
@@ -268,16 +257,5 @@
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/startdate"
         app:layout_constraintTop_toBottomOf="@+id/txtDosage" />
-
-    <Button
-        android:id="@+id/btnAddPatient"
-        android:layout_width="154dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="308dp"
-        android:text="Add Patient "
-        app:layout_constraintStart_toEndOf="@+id/btnView"
-        app:layout_constraintTop_toBottomOf="@+id/txtPreparation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

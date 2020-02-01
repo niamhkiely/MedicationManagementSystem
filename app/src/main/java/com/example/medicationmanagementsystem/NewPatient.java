@@ -34,6 +34,7 @@ public class NewPatient extends AppCompatActivity {
 
     }
     public void AddPatientData() {
+        //When user clicks submit button
         btnSubmitPatient.setOnClickListener(
                 new View.OnClickListener(){
                     @Override

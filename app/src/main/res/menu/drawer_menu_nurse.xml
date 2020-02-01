@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Options">
+        <menu>
+            <item
+                android:id="@+id/nav_nurseviewprescription"
+                android:icon="@drawable/ic_view_prescriptions"
+                android:title="View Prescription" />
+            <item
+                android:id="@+id/nav_nurseviewpatients"
+                android:icon="@drawable/ic_patients_view"
+                android:title="View Patients" />
+            <item
+                android:id="@+id/nav_viewcaringlist"
+                android:icon="@drawable/ic_caringlist"
+                android:title="View Caring List " />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
