@@ -43,26 +43,30 @@ public class Login extends AppCompatActivity {
                 if(Chkemailpass == true) {
                     String typeofuser;
                     typeofuser = db.checkUser(loginemail.getText().toString()); //get user type from database
-                    if(typeofuser.equals("Nurse")) {
+                    if (typeofuser.equals("Nurse")) {
                         Intent mainintent = new Intent(Login.this, NurseHome.class);
                         //code below is based on Send user Name to display another Activity in android Studio, sabsab Chanel, https://www.youtube.com/watch?v=SN5cgAU0vYo
                         mainintent.putExtra("EMAIL", email);
                         //END
-                        startActivity(mainintent);}
-                    else if (typeofuser.equals("Doctor")){
+                        startActivity(mainintent);
+                    } else if (typeofuser.equals("Doctor")) {
                         Intent intent = new Intent(Login.this, DoctorHome.class);
                         //code below is based on Send user Name to display another Activity in android Studio, sabsab Chanel, https://www.youtube.com/watch?v=SN5cgAU0vYo
-                        intent.putExtra("EMAIL",email);
+                        intent.putExtra("EMAIL", email);
                         //END
-                        startActivity(intent);}
-                    }
+                        startActivity(intent);
+                    } else if (typeofuser.equals("Admin")){
+                        Intent adminintent = new Intent(Login.this, AdminHome.class);
+                        //code below is based on Send user Name to display another Activity in android Studio, sabsab Chanel, https://www.youtube.com/watch?v=SN5cgAU0vYo
+                        adminintent.putExtra("EMAIL",email);
+                        startActivity(adminintent);}
+                }
                     //Toast.makeText(getApplicationContext(),"Successfully Login", Toast.LENGTH_SHORT).show();
-
                 else
                     Toast.makeText(getApplicationContext(),"Wrong email or password", Toast.LENGTH_SHORT).show();
                 }
         });
 
-    }
+        }
 }
 //END

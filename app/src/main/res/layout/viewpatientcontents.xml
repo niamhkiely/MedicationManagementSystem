@@ -6,8 +6,13 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:weightSum="300">
 
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/patientlistview" />
+    <ListView
+        android:id="@+id/patientlistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </ListView>
+
 </LinearLayout>
+
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:layout_weight="300">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_weight="25"
+            android:layout_column="1"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Prescription Number"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="2"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Patient Number"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="3"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Date prescribed"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="35"
+            android:layout_column="4"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Drug Name"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="25"
+            android:layout_column="5"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Concentration"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="35"
+            android:layout_column="6"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Dosage"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="7"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Preparation"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="8"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Start Date"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="9"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="End Date"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="30"
+            android:layout_column="10"
+            android:layout_width="300dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="Doctor Number"
+            android:textStyle="bold" />
+    </TableRow>
+</TableLayout>

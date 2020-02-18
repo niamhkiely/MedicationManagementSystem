@@ -2,6 +2,7 @@ package com.example.medicationmanagementsystem;
 //The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=jpt3Md9aDIQ
 public class Prescription {
     //creating variables
+    private String prescriptionid;
     private String patientID;
     private String presdate;
     private String drugname;
@@ -13,8 +14,9 @@ public class Prescription {
     private String doctorID;
 
 
-    public Prescription(String presID, String preDate, String dname, String concent, String dos, String prep, String sDate, String eDate, String dID) {
-        patientID = presID;
+    public Prescription(String presID, String pID, String preDate, String dname, String concent, String dos, String prep, String sDate, String eDate, String dID) {
+        prescriptionid = presID;
+        patientID = pID;
         presdate = preDate;
         drugname = dname;
         concentration = concent;
@@ -24,6 +26,8 @@ public class Prescription {
         enddate = eDate;
         doctorID = dID;
     }
+
+    public String getPresID() { return prescriptionid; }
 
     public String getPatientID() {
         return patientID;

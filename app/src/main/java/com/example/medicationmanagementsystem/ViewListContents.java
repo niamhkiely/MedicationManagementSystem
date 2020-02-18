@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -34,6 +35,12 @@ public class ViewListContents extends AppCompatActivity {
 
     myDB = new DatabaseHelper(this);
     listItem = new ArrayList<String>();
+
+    listView = (ListView)findViewById(R.id.listview);
+    //The code below based on android listview header, CodeVideo, https://www.youtube.com/watch?v=EnG5ZIVfki8
+    ViewGroup headerview = (ViewGroup)getLayoutInflater().inflate(R.layout.viewprescription_header, listView, false);
+    listView.addHeaderView(headerview);
+    //END
     //create new array
     prescriptionList = new ArrayList<Prescription>();
     Cursor data = myDB.getListContents();
@@ -44,7 +51,7 @@ public class ViewListContents extends AppCompatActivity {
     }
     else {
       while(data.moveToNext()){
-        prescription = new Prescription(data.getString(1), data.getString(2), data.getString(3),
+        prescription = new Prescription(data.getString(0), data.getString(1), data.getString(2), data.getString(3),
                 data.getString(4), data.getString(5), data.getString(6), data.getString(7),
                 data.getString(8), data.getString(9));
         prescriptionList.add(prescription);

@@ -1,11 +1,14 @@
 package com.example.medicationmanagementsystem;
-//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=hHQqFGpod14
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -15,13 +18,14 @@ import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
 
 import java.util.ArrayList;
 
-public class ViewPatientListContents extends AppCompatActivity {
+public class AdminViewPatients extends AppCompatActivity {
     DatabaseHelper myDB;
     ArrayList<Patient> patientList;
     ListView patientlistView;
     Patient patient;
     ArrayAdapter adapter;
     ArrayList<String> patientlistItem = new ArrayList<String>();
+    TextView txtpatientid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -41,7 +45,7 @@ public class ViewPatientListContents extends AppCompatActivity {
         int numRows = patientdata.getCount();
         //if there is no rows in the database
         if(numRows == 0){
-            Toast.makeText(ViewPatientListContents.this, "There is nothing in this database", Toast.LENGTH_LONG).show();
+            Toast.makeText(AdminViewPatients.this, "There is nothing in this database", Toast.LENGTH_LONG).show();
         }
         else {
             while(patientdata.moveToNext()){
@@ -53,7 +57,20 @@ public class ViewPatientListContents extends AppCompatActivity {
             Patient_ListAdapter padapter = new Patient_ListAdapter(this,R.layout.patient_view,patientList);
             patientlistView = (ListView) findViewById(R.id.patientlistview);
             patientlistView.setAdapter(padapter);
-        }
+            UpdatePatient();
+        }}
+    public void UpdatePatient(){
+        ListView patientlistView = (ListView)findViewById(R.id.patientlistview);
+        patientlistView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                txtpatientid = (TextView)findViewById(R.id.textPatientID);
+                String patientid = txtpatientid.getText().toString();
+                Intent mainintent = new Intent(AdminViewPatients.this, UpdatePatient.class);
+                mainintent.putExtra("PATIENTID", patientid);
+                //END
+                startActivity(mainintent);
+            }});
     }
     //END
 }

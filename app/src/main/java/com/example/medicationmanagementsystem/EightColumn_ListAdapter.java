@@ -29,6 +29,7 @@ public class EightColumn_ListAdapter extends ArrayAdapter<Prescription> {
     Prescription prescription = prescriptions.get(position);
 
     if (prescription != null) {
+      TextView prescriptionID = (TextView) convertView.findViewById(R.id.textprescriptionid);
       TextView patientID = (TextView) convertView.findViewById(R.id.textpatientID);
       TextView date = (TextView) convertView.findViewById(R.id.textdate);
       TextView drugname = (TextView) convertView.findViewById(R.id.textdrugname);
@@ -39,6 +40,9 @@ public class EightColumn_ListAdapter extends ArrayAdapter<Prescription> {
       TextView enddate = (TextView) convertView.findViewById(R.id.textenddate);
       TextView doctorID = (TextView) convertView.findViewById(R.id.textdoctorid);
 
+      if(prescriptionID != null) {
+        prescriptionID.setText((prescription.getPresID()));
+      }
       if(patientID != null) {
         patientID.setText((prescription.getPatientID()));
       }

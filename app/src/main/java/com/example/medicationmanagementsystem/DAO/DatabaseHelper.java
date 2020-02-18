@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.medicationmanagementsystem.Patient;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Create Database
@@ -144,6 +146,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return email;
     }
+
     //insert caringlist data
     public boolean insertCaringListData(String timeslot) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -220,6 +223,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     //END
 
+    public Cursor getPatientsPerCL(String caringlistid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //SQL select statement
+        Cursor patients = db.rawQuery("SELECT * FROM patient_table WHERE CARINGLISTID = ?",
+                new String[]{caringlistid});
+        return patients;
+    }
+
     //This code is based on SQLite Database to ListView- Part 4:Search Items- Android Studio Tutorial, KOD Dev, https://www.youtube.com/watch?v=QY-O49a_Ags
     public Cursor searchPrescriptions(String text) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -228,6 +239,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
     //END
+    //code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
+    // ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
+    //Remove patient from caringlist
+    public boolean UpdateCaringList(String patientid, String caringid) {
+        caringid = "0";
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues3 = new ContentValues();
+        contentValues3.put(COL_PATIENT_CARINGID, caringid);
+        long result= db.update(TABLE_PATIENT,contentValues3,"PATIENTID = ?",new String[]{patientid});
+        return true;
+    }
+    //END
+    public boolean updatePatientData(String patientid, String fname, String sname, String pps, String dob, String address, String patienttype, String patientmedcon, String caringid) {
+
+    SQLiteDatabase db = this.getWritableDatabase();
+    ContentValues contentValues1 = new ContentValues();
+    contentValues1.put(COL_PATIENT_FNAME, fname);
+    contentValues1.put(COL_PATIENT_SNAME, sname);
+    contentValues1.put(COL_PATIENT_PPS, pps);
+    contentValues1.put(COL_PATIENT_DOB, dob);
+    contentValues1.put(COL_PATIENT_ADDRESS, address);
+    contentValues1.put(COL_PATIENT_TYPE, patienttype);
+    contentValues1.put(COL_PATIENT_MEDCOND,patientmedcon);
+    contentValues1.put(COL_PATIENT_CARINGID, caringid);
+    long result = db.update(TABLE_PATIENT, contentValues1, "PATIENTID = ? ", new String[]{patientid});
+    return true;
+    }
+    public Cursor getPatient(String patientid){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        //SQL select statement
+        Cursor patientdata = db.rawQuery("SELECT * FROM patient_table WHERE PATIENTID = ?",
+                new String[]{patientid});
+        patientdata.moveToFirst();
+        return patientdata;
+    }
 }
 
 
