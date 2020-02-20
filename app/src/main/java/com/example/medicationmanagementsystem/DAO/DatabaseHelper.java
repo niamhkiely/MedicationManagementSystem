@@ -267,7 +267,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     return true;
     }
     public Cursor getPatient(String patientid){
-
         SQLiteDatabase db = this.getReadableDatabase();
         //SQL select statement
         Cursor patientdata = db.rawQuery("SELECT * FROM patient_table WHERE PATIENTID = ?",
