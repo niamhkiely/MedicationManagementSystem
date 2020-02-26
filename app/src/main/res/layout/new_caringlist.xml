@@ -11,6 +11,12 @@
         android:ems="10"
         android:hint="Time Slot"/>
 
+    <EditText
+        android:id="@+id/txtnurseid"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:ems="10"
+        android:hint="Nurse Number"/>
 
     <Button
         android:id="@+id/btnSubmitCL"

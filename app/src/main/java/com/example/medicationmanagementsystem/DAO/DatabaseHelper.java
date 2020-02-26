@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_CARINGLIST = "caringlist_table";
     public static final String COL_CARINGLIST_ID = "CARINGLISTID";
     public static final String COL_CARINGLIST_TIMESLOT = "TIMESLOT";
-    public static final String COL_CARINGLIST_USERID = COL_USER_USERID;
+    public static final String COL_CARINGLIST_NURSEID = "NURSEID";
     //Create patient table
     public static final String TABLE_PATIENT = "patient_table";
     public static final String COL_PATIENT_PATIENTID = "PATIENTID";
@@ -65,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //create user table with SQL statement
         String usertable = "CREATE TABLE " + TABLE_USERS + "(USERID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT, PASSWORD TEXT, TYPEOFUSER TEXT)";
         //create caringlist table
-        String caringlisttable ="CREATE TABLE " + TABLE_CARINGLIST + "(CARINGLISTID INTEGER PRIMARY KEY AUTOINCREMENT, TIMESLOT TIME, USERID INTEGER)";
+        String caringlisttable ="CREATE TABLE " + TABLE_CARINGLIST + "(CARINGLISTID INTEGER PRIMARY KEY AUTOINCREMENT, TIMESLOT TIME, NURSEID INTEGER)";
         //Create patienttable with SQL statement
         String patienttable = "CREATE TABLE " + TABLE_PATIENT + "(PATIENTID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, SNAME TEXT, PPS TEXT, DOB TEXT, ADDRESS TEXT, PATIENTTYPE TEXT, PATIENTMEDCON TEXT, CARINGLISTID INTEGER)";
         //Create prescriptiontable with SQL statement
@@ -148,10 +148,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //insert caringlist data
-    public boolean insertCaringListData(String timeslot) {
+    public boolean insertCaringListData(String timeslot, String nurseid) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues3 = new ContentValues();
         contentValues3.put(COL_CARINGLIST_TIMESLOT, timeslot);
+        contentValues3.put(COL_CARINGLIST_NURSEID, nurseid);
         long result = db.insert(TABLE_CARINGLIST, null, contentValues3);
         if (result == 1)
             return false;
@@ -230,6 +231,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{caringlistid});
         return patients;
     }
+    //get caring lists per nurse
+    public Cursor getCaringlistPerNurse(String nurseid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor caringlists = db.rawQuery("SELECT CARINGLISTID, TIMESLOT FROM caringlist_table WHERE NURSEID = ?",
+                new String[]{nurseid});
+        return caringlists;
+    }
+    //getting nurse id from email login
+    public String getNurseID(String email) {
+        String nurseid = "";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT USERID FROM user_table WHERE EMAIL=?", new String[]{email});
+        if (cursor.moveToFirst()) {
+            do {
+                nurseid = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return nurseid;
+    }
 
     //This code is based on SQLite Database to ListView- Part 4:Search Items- Android Studio Tutorial, KOD Dev, https://www.youtube.com/watch?v=QY-O49a_Ags
     public Cursor searchPrescriptions(String text) {
@@ -251,6 +273,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
     //END
+    //Updating patient information
     public boolean updatePatientData(String patientid, String fname, String sname, String pps, String dob, String address, String patienttype, String patientmedcon, String caringid) {
 
     SQLiteDatabase db = this.getWritableDatabase();
@@ -266,6 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     long result = db.update(TABLE_PATIENT, contentValues1, "PATIENTID = ? ", new String[]{patientid});
     return true;
     }
+    //retrieving patient information
     public Cursor getPatient(String patientid){
         SQLiteDatabase db = this.getReadableDatabase();
         //SQL select statement

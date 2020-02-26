@@ -13,12 +13,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
 import com.google.android.material.navigation.NavigationView;
 
 public class NurseHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    DatabaseHelper myDB;
     private DrawerLayout nursedrawer;
     TextView txtDisplayEmail;
+    String nurseid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class NurseHome extends AppCompatActivity implements NavigationView.OnNav
         Intent mainintent = getIntent();
         String email = mainintent.getStringExtra("EMAIL");
         txtDisplayEmail.setText(email);
+        myDB = new DatabaseHelper(this);
+        nurseid = myDB.getNurseID(email);
         //END
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, nursedrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         nursedrawer.addDrawerListener(toggle);
@@ -57,7 +61,8 @@ public class NurseHome extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(viewpatientintent);
                 break;
             case R.id.nav_viewcaringlist:
-                Intent viewcaringlist= new Intent(NurseHome.this, ViewCaringList.class);
+                Intent viewcaringlist= new Intent(NurseHome.this, NurseViewCaringList.class);
+                viewcaringlist.putExtra("NURSEID",nurseid);
                 startActivity(viewcaringlist);
                 break;
             case R.id.nav_logout:
