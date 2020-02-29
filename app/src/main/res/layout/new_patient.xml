@@ -1,226 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="989dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtCaringID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/caringlist"
-        app:layout_constraintTop_toBottomOf="@+id/txtMedConditions" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/caduceus"
+            android:layout_marginRight="200dp"/>
 
-    <TextView
-        android:id="@+id/newpatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="26dp"
-        android:text="Create new patient"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/newpatient"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Create new patient:"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/fname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="37dp"
-        android:text="First Name:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newpatient" />
 
-    <TextView
-        android:id="@+id/sName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="35dp"
-        android:text="Surname:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fname" />
+        <EditText
+            android:id="@+id/txtfname"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="First Name"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="416dp"
-        android:layout_marginLeft="416dp"
-        android:layout_marginTop="88dp"
-        android:text="Address:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtSName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Surname"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/pps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="30dp"
-        android:text="PPS:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sName" />
+        <EditText
+            android:id="@+id/txtAddress"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Address"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="41dp"
-        android:text="Date of Birth:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pps" />
+        <EditText
+            android:id="@+id/txtPPS"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="PPS Number"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="39dp"
-        android:text="Type of patient:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        <TextView
+            android:id="@+id/txtDOB"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Date of Birth"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
+        <Spinner
+            android:id="@+id/txtTypeOfPatient"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Type of Patient"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/medconditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="44dp"
-        android:text="Medical Conditions"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        <EditText
+            android:id="@+id/txtMedConditions"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Medical Conditions"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/txtCaringID"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Caring List Number"
+            android:inputType="number"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/txtfname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="67dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/fname"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtAddress"
-        android:layout_width="256dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="67dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/address"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtSName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/sName"
-        app:layout_constraintTop_toBottomOf="@+id/txtfname" />
-
-    <EditText
-        android:id="@+id/txtPPS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginLeft="106dp"
-        android:layout_marginTop="17dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/pps"
-        app:layout_constraintTop_toBottomOf="@+id/txtSName" />
-
-    <EditText
-        android:id="@+id/txtDOB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/txtPPS" />
-
-    <EditText
-        android:id="@+id/txtMedConditions"
-        android:layout_width="195dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="26dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/medconditions"
-        app:layout_constraintTop_toBottomOf="@+id/txtTypeOfPatient" />
-
-    <Button
-        android:id="@+id/btnSubmitPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="37dp"
-        android:text="Submit Patient Information"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCaringID" />
-
-    <EditText
-        android:id="@+id/txtTypeOfPatient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/txtDOB" />
-
-    <TextView
-        android:id="@+id/caringlist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="81dp"
-        android:text="Caring List: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medconditions" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/btnSubmitPatient"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button"
+                android:text="Submit Patient Information"
+                android:textColor="#ffff"/>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

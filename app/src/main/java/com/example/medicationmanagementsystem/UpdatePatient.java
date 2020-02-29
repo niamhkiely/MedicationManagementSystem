@@ -19,7 +19,7 @@ public class UpdatePatient extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_patient);
+        setContentView(R.layout.update_patient);
 
         myDb = new DatabaseHelper(this);
         Intent mainintent = getIntent();

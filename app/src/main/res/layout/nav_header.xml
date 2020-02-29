@@ -13,6 +13,14 @@
         android:layout_height="75dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/ic_person_black_24dp"/>
+    <TextView
+        android:id="@+id/textbox"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingTop="10dp"
+        android:textColor="#FF000000"
+        android:text="Logged in as: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <TextView
         android:id="@+id/emaildisplay"

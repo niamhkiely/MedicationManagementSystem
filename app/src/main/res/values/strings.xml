@@ -8,5 +8,14 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="add_new_patients_to_caring_list">Add New Patients to Caring List</string>
-
+    <string-array name="typeofusers">
+        <item></item>
+        <item>Doctor</item>
+        <item>Nurse</item>
+    </string-array>
+    <string-array name="typeofpatient">
+        <item></item>
+        <item>Private</item>
+        <item>Public</item>
+    </string-array>
 </resources>

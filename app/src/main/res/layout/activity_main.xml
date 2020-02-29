@@ -10,35 +10,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="989dp"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/caduceus"
+            android:layout_marginRight="200dp"/>
         <TextView
             android:id="@+id/textView4"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="Create Prescription"
+            android:layout_marginTop="10dp"
+            android:text="Create Prescription:"
             android:textSize="25dp"
             android:textStyle="bold" />
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/caduceus"/>
         <TextView
             android:id="@+id/mydateText"
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/edit"
             android:layout_marginTop="20dp"
-            android:textSize="18sp" />
-
+            android:textSize="18sp"
+            android:padding="15dp"/>
         <EditText
             android:id="@+id/txtpatientno"
             android:layout_width="300dp"
@@ -104,19 +106,7 @@
             android:textColorHint="#696969"
             android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/txtdate"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edit"
-            android:hint="Date"
-            android:padding="15dp"
-            android:textColorHint="#696969"
-            android:textSize="14sp" />
-
-        <EditText
+        <TextView
             android:id="@+id/txtSDate"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -128,7 +118,7 @@
             android:textColorHint="#696969"
             android:textSize="14sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtEndDate"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

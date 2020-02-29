@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="989dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/caduceus"
+                android:layout_marginRight="200dp"/>
+
+            <TextView
+                android:id="@+id/newpatient"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Update Existing Patient:"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/txtfname"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtSName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Surname"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtAddress"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Address"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtPPS"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="PPS Number"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtDOB"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Date of Birth"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/txtTypeOfPatient"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Type of Patient"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtMedConditions"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Medical Conditions"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/txtCaringID"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit"
+                android:hint="Caring List Number"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColorHint="#696969"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnSubmitPatient"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button"
+                android:text="Submit Patient Information"
+                android:textColor="#ffff"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
