@@ -3,25 +3,55 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <EditText
-        android:id="@+id/txtTimeSlot"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Time Slot"/>
+        android:layout_height="989dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtnurseid"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:ems="10"
-        android:hint="Nurse Number"/>
+        <TextView
+            android:id="@+id/newpatient"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Create new caring list:"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnSubmitCL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create New Caring List" />
+        <TextView
+            android:id="@+id/txtTimeSlot"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Time Slot"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="25dp"/>
 
+        <EditText
+            android:id="@+id/txtnurseid"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit"
+            android:hint="Nurse Number"
+            android:padding="15dp"
+            android:textColorHint="#696969"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/btnSubmitCL"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:textColor="#ffff"
+            android:text="Create New Caring List" />
+        </LinearLayout>
 </LinearLayout>

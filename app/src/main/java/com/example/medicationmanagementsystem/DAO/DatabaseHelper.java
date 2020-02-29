@@ -223,7 +223,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return patientdata;
     }
     //END
-
+    public Cursor getPrescriptionsPerPatient(String patientid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //SQL select statement
+        Cursor data = db.rawQuery("SELECT * FROM prescription_table WHERE PATIENTID = ?",
+                new String[]{patientid});
+        return data;
+    }
     public Cursor getPatientsPerCL(String caringlistid){
         SQLiteDatabase db = this.getReadableDatabase();
         //SQL select statement
@@ -264,11 +270,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
     // ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
     //Remove patient from caringlist
-    public boolean UpdateCaringList(String patientid, String caringid) {
-        caringid = "0";
+    public boolean UpdateCaringList(String patientid, String caringlistid) {
+        caringlistid = "0";
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues3 = new ContentValues();
-        contentValues3.put(COL_PATIENT_CARINGID, caringid);
+        contentValues3.put(COL_PATIENT_CARINGID, caringlistid);
         long result= db.update(TABLE_PATIENT,contentValues3,"PATIENTID = ?",new String[]{patientid});
         return true;
     }

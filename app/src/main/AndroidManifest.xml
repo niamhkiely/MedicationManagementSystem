@@ -28,6 +28,7 @@
         <activity android:name=".UpdatePatient"/>
         <activity android:name=".AdminPatientsPerCL"/>
         <activity android:name=".NurseViewCaringList"/>
+        <activity android:name=".PrescriptionsPerPatient"/>
         <activity android:name=".DoctorHome"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".NurseHome"

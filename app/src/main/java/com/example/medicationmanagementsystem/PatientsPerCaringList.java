@@ -63,44 +63,17 @@ public class PatientsPerCaringList extends AppCompatActivity {
             Patient_ListAdapter padapter = new Patient_ListAdapter(this, R.layout.patient_view, patientList);
             patientlistView = (ListView)findViewById(R.id.patientlistview);
             patientlistView.setAdapter(padapter);
-            UpdateCaringList();
-        }}
-        //code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
-        //ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
-        public void UpdateCaringList(){
-        ListView patientlistView = (ListView)findViewById(R.id.patientlistview);
-        patientlistView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //code below based on Android Tutorial for Beginners 12 # Android Alert Dialog Example, ProgrammingKnowledge
-                //https://www.youtube.com/watch?v=oqEXYBepqus
-                AlertDialog.Builder a_builder = new AlertDialog.Builder(PatientsPerCaringList.this);
-                a_builder.setMessage("Do you want to delete patient from caring list?").setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                txtpatientid = (TextView)findViewById(R.id.textPatientID);
-                                String patientid = txtpatientid.getText().toString();
-                                String caringlistid = "0";
-                                boolean isUpdated = myDB.UpdateCaringList(patientid, caringlistid);
-                                if (isUpdated == true)
-                                    Toast.makeText(PatientsPerCaringList.this, "Caring List Updated", Toast.LENGTH_LONG).show();
-                                else
-                                    Toast.makeText(PatientsPerCaringList.this, "Caring List Not Updated", Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert = a_builder.create();
-                alert.setTitle("Alert");
-                alert.show();
-                //END
-            }
-        });
-    }
-}
+
+            patientlistView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    txtpatientid = (TextView)view.findViewById(R.id.textPatientID);
+                    String patientid = txtpatientid.getText().toString();
+                    Intent intent = new Intent(PatientsPerCaringList.this, PrescriptionsPerPatient.class);
+                    intent.putExtra("PATIENTID",patientid);
+                    startActivity(intent);
+                }}
+            );
+        }
+}}
 //END

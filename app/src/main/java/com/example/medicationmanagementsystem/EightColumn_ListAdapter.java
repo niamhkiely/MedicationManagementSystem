@@ -68,7 +68,7 @@ public class EightColumn_ListAdapter extends ArrayAdapter<Prescription> {
         enddate.setText((prescription.getEnddate()));
       }
       if(doctorID != null) {
-        patientID.setText((prescription.getDoctorID()));
+        doctorID.setText((prescription.getDoctorID()));
       }
     }
     return convertView;
