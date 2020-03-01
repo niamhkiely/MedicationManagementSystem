@@ -1,9 +1,11 @@
 package com.example.medicationmanagementsystem;
 //code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge, https://www.youtube.com/watch?v=kDZES1wtKUY
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,13 +16,20 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Calendar;
 
-public class NewPatient extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class NewPatient extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NavigationView.OnNavigationItemSelectedListener{
+    private DrawerLayout drawer;
     DatabaseHelper myDb;
     EditText editfname, editsname, editpps, editaddress, editpatientmedcon, editcaringid;
     TextView editdob;
@@ -33,6 +42,18 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
         setContentView(R.layout.new_patient);
 
         myDb = new DatabaseHelper(this);
+        //navigation drawer
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        //end
 
         editfname = findViewById(R.id.txtfname);
         editsname = findViewById(R.id.txtSName);
@@ -134,6 +155,42 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_createprescription:
+                Intent createpresintent = new Intent(NewPatient.this, MainActivity.class);
+                startActivity(createpresintent);
+                break;
+            case R.id.viewprescriptions:
+                Intent presintent = new Intent(NewPatient.this, ViewListContents.class);
+                startActivity(presintent);
+                break;
+            case R.id.nav_addpatients:
+                Intent createpatientintent = new Intent(NewPatient.this, NewPatient.class);
+                startActivity(createpatientintent);
+                break;
+            case R.id.nav_viewpatients:
+                Intent viewpatientintent = new Intent(NewPatient.this, ViewPatientListContents.class);
+                startActivity(viewpatientintent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutintent= new Intent(NewPatient.this, Login.class);
+                startActivity(logoutintent);
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
 //END

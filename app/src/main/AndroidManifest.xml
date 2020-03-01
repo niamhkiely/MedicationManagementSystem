@@ -19,8 +19,10 @@
         <activity android:name=".ViewPatientListContents" />
         <activity android:name=".AdminViewPatients" />
         <activity android:name=".ViewListContents" />
-        <activity android:name=".NewPatient" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".NewPatient"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Register" />
         <activity android:name=".NewCaringList"/>
         <activity android:name=".ViewCaringList"/>

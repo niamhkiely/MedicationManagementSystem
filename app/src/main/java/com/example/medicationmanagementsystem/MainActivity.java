@@ -3,7 +3,12 @@ package com.example.medicationmanagementsystem;
 //https://www.youtube.com/watch?v=kDZES1wtKUY
 
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -11,6 +16,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,6 +24,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
+import com.google.android.material.navigation.NavigationView;
+
 import org.w3c.dom.Text;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,7 +33,10 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    //navigation drawer
+    private DrawerLayout drawer;
+
     DatabaseHelper myDb;
     EditText editpatientid, editdrugname, editdosage, editconcentration, editprep, editdoctorid;
     TextView editdate, editstartdate, editenddate;
@@ -40,6 +51,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myDb = new DatabaseHelper(this);
+        //navigation toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        //end
 
         editpatientid = findViewById(R.id.txtpatientno);
         editdate = findViewById(R.id.mydateText);
@@ -115,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //END
-
     //code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge,
     //https://www.youtube.com/watch?v=kDZES1wtKUY
     public void AddData() {
@@ -151,6 +173,42 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+    }
+    //NAVIGATION
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_createprescription:
+                Intent createpresintent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(createpresintent);
+                break;
+            case R.id.viewprescriptions:
+                Intent presintent = new Intent(MainActivity.this, ViewListContents.class);
+                startActivity(presintent);
+                break;
+            case R.id.nav_addpatients:
+                Intent createpatientintent = new Intent(MainActivity.this, NewPatient.class);
+                startActivity(createpatientintent);
+                break;
+            case R.id.nav_viewpatients:
+                Intent viewpatientintent = new Intent(MainActivity.this, ViewPatientListContents.class);
+                startActivity(viewpatientintent);
+                break;
+            case R.id.nav_logout:
+                Intent logoutintent= new Intent(MainActivity.this, Login.class);
+                startActivity(logoutintent);
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
 //END

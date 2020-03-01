@@ -226,7 +226,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getPrescriptionsPerPatient(String patientid){
         SQLiteDatabase db = this.getReadableDatabase();
         //SQL select statement
-        Cursor data = db.rawQuery("SELECT * FROM prescription_table WHERE PATIENTID = ?",
+        Cursor data = db.rawQuery("SELECT * FROM prescription_table WHERE PATIENTID =? AND strftime('%d/%m/%Y',date('now') BETWEEN " +
+                        "STARTDATE AND ENDDATE)",
                 new String[]{patientid});
         return data;
     }
