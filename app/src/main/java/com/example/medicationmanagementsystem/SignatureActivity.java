@@ -1,5 +1,5 @@
 package com.example.medicationmanagementsystem;
-
+//the code below is based on Android Canvas Tutorial – Capture Digital Signature and Save, Umesh Khandelwal, https://www.androidtutorialpoint.com/basics/android-canvas-tutorial-capture-digital-signature-and-save/
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -270,3 +270,4 @@ public class SignatureActivity extends AppCompatActivity  {
     }
 
 }
+//END

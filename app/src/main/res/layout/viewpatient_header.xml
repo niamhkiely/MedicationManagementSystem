@@ -11,75 +11,75 @@
         <TextView
             android:layout_weight="33"
             android:layout_column="1"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Patient Number"
             android:textStyle="bold" />
 
         <TextView
             android:layout_weight="33"
             android:layout_column="2"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="First Name"
             android:textStyle="bold" />
 
         <TextView
             android:layout_weight="33"
             android:layout_column="3"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Surname"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="4"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="PPS Number"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="5"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Date of Birth"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="6"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Address"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="7"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Patient Type"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="8"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Medical Conditions"
             android:textStyle="bold" />
         <TextView
             android:layout_weight="33"
             android:layout_column="9"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Caring List"
             android:textStyle="bold" />
     </TableRow>

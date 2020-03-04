@@ -9,11 +9,11 @@
         >
 
         <TextView
-            android:layout_weight="25"
+            android:layout_weight="30"
             android:layout_column="1"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Prescription Number"
             android:textStyle="bold" />
 
@@ -22,7 +22,7 @@
             android:layout_column="2"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Patient Number"
             android:textStyle="bold" />
 
@@ -31,31 +31,31 @@
             android:layout_column="3"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
-            android:text="Date prescribed"
+            android:textSize="15sp"
+            android:text="Date"
             android:textStyle="bold" />
         <TextView
-            android:layout_weight="35"
+            android:layout_weight="30"
             android:layout_column="4"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Drug Name"
             android:textStyle="bold" />
         <TextView
-            android:layout_weight="25"
+            android:layout_weight="30"
             android:layout_column="5"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Concentration"
             android:textStyle="bold" />
         <TextView
-            android:layout_weight="35"
+            android:layout_weight="30"
             android:layout_column="6"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Dosage"
             android:textStyle="bold" />
         <TextView
@@ -63,7 +63,7 @@
             android:layout_column="7"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Preparation"
             android:textStyle="bold" />
         <TextView
@@ -71,7 +71,7 @@
             android:layout_column="8"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Start Date"
             android:textStyle="bold" />
         <TextView
@@ -79,7 +79,7 @@
             android:layout_column="9"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="End Date"
             android:textStyle="bold" />
         <TextView
@@ -87,7 +87,7 @@
             android:layout_column="10"
             android:layout_width="300dp"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="Doctor Number"
             android:textStyle="bold" />
     </TableRow>

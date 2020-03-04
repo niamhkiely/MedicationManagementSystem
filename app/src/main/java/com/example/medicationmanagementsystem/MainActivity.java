@@ -12,6 +12,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     EditText editpatientid, editdrugname, editdosage, editconcentration, editprep, editdoctorid;
     TextView editdate, editstartdate, editenddate;
     Button btnSubmitData;
+    //signature
+    Button signatureButton;
+    ImageView signImage;
     private DatePickerDialog.OnDateSetListener mDateSetLisener;
     private DatePickerDialog.OnDateSetListener nDateSetLisener;
     private static final String TAG = "MainActivity";
@@ -63,6 +69,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         //end
+
+        //the code below is based on Android Canvas Tutorial – Capture Digital Signature and Save, Umesh Khandelwal, https://www.androidtutorialpoint.com/basics/android-canvas-tutorial-capture-digital-signature-and-save/
+
+        signImage = (ImageView) findViewById(R.id.imageView1);
+        String image_path = getIntent().getStringExtra("imagePath");
+        Bitmap bitmap = BitmapFactory.decodeFile(image_path);
+        signImage.setImageBitmap(bitmap);
+
+        signImage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SignatureActivity.class);
+                startActivity(i);
+            }
+        });
+        //END
 
         editpatientid = findViewById(R.id.txtpatientno);
         editdate = findViewById(R.id.mydateText);

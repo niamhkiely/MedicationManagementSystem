@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="ColorPrimaryDark">#000000</color>
+    <color name="ColorPrimary">#202324</color>
+    <color name="BorderLineColor">#B8B9B1</color>
+    <color name="CanvasBackground">#ffffff</color>
 </resources>
