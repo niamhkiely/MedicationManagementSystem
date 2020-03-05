@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     EditText editpatientid, editdrugname, editdosage, editconcentration, editprep, editdoctorid;
     TextView editdate, editstartdate, editenddate;
     Button btnSubmitData;
+    String patientid, date, drugname, concentration, dosage, preparation, startdate, enddate, doctor;
     //signature
     Button signatureButton;
     ImageView signImage;
@@ -68,21 +69,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        //end
-
-        //the code below is based on Android Canvas Tutorial – Capture Digital Signature and Save, Umesh Khandelwal, https://www.androidtutorialpoint.com/basics/android-canvas-tutorial-capture-digital-signature-and-save/
-
-        signImage = (ImageView) findViewById(R.id.imageView1);
-        String image_path = getIntent().getStringExtra("imagePath");
-        Bitmap bitmap = BitmapFactory.decodeFile(image_path);
-        signImage.setImageBitmap(bitmap);
-
-        signImage.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, SignatureActivity.class);
-                startActivity(i);
-            }
-        });
         //END
 
         editpatientid = findViewById(R.id.txtpatientno);
@@ -95,8 +81,73 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editenddate = findViewById(R.id.txtEndDate);
         editdoctorid = findViewById(R.id.txtDrNumber);
         btnSubmitData = findViewById(R.id.btnSubmitPrescription);
+
+        Intent intent = getIntent();
+        String txtpatientid = intent.getStringExtra("PATIENTID");
+        String txtdrugname = intent.getStringExtra("DRUGNAME");
+        String txtdosage = intent.getStringExtra("DOSAGE");
+        String txtconcentration = intent.getStringExtra("CONCENTRATION");
+        String txtpreparation = intent.getStringExtra("PREPARATION");
+        String txtstartdate = intent.getStringExtra("STARTDATE");
+        String txtenddate = intent.getStringExtra("ENDDATE");
+        String txtdoctor = intent.getStringExtra("DOCTORID");
+
+        if (txtpatientid != null) {
+            editpatientid.setText(txtpatientid);
+        }
+        if (txtdrugname != null) {
+            editdrugname.setText(txtdrugname);
+        }
+        if (txtconcentration != null) {
+            editconcentration.setText(txtconcentration);
+        }
+        if (txtdosage != null) {
+            editdosage.setText(txtdosage);
+        }
+        if (txtpreparation != null) {
+            editprep.setText(txtpreparation);
+        }
+        if (txtstartdate != null) {
+            editstartdate.setText(txtstartdate);
+        }
+        if (txtenddate != null) {
+            editenddate.setText(txtenddate);
+        }
+        if (txtdoctor != null) {
+            editdoctorid.setText(txtdoctor);
+        }
         AddData();
         //END
+        //the code below is based on Android Canvas Tutorial – Capture Digital Signature and Save, Umesh Khandelwal, https://www.androidtutorialpoint.com/basics/android-canvas-tutorial-capture-digital-signature-and-save/
+
+        signImage = (ImageView) findViewById(R.id.imageView1);
+        String image_path = getIntent().getStringExtra("imagePath");
+        Bitmap bitmap = BitmapFactory.decodeFile(image_path);
+        signImage.setImageBitmap(bitmap);
+
+        signImage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                patientid = editpatientid.getText().toString();
+                drugname = editdrugname.getText().toString();
+                concentration = editconcentration.getText().toString();
+                dosage = editdosage.getText().toString();
+                preparation = editprep.getText().toString();
+                startdate = editstartdate.getText().toString();
+                enddate = editenddate.getText().toString();
+                doctor = editdoctorid.getText().toString();
+                Intent i = new Intent(MainActivity.this, SignatureActivity.class);
+                i.putExtra("PATIENTID", patientid);
+                i.putExtra("DRUGNAME", drugname);
+                i.putExtra("CONCENTRATION", concentration);
+                i.putExtra("DOSAGE", dosage);
+                i.putExtra("PREPARATION", preparation);
+                i.putExtra("STARTDATE", startdate);
+                i.putExtra("ENDDATE", enddate);
+                i.putExtra("DOCTORID", doctor);
+                startActivity(i);
+
+            }
+        });
         //code below is based on Android Beginner Tutorial #25- DatePicker Dialog [Choosing a Date from a Dialog Picker,
         //CodingWithMitch, https://www.youtube.com/watch?v=hwe1abDO2Ag
         editstartdate.setOnClickListener(new View.OnClickListener(){

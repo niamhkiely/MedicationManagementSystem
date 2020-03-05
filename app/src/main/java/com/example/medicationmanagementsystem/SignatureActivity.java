@@ -49,6 +49,7 @@ public class SignatureActivity extends AppCompatActivity  {
      String pic_name = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
      String StoredPath = DIRECTORY + pic_name + ".png";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,9 @@ public class SignatureActivity extends AppCompatActivity  {
         mGetSign.setOnClickListener(onButtonClick);
         mClear.setOnClickListener(onButtonClick);
         mCancel.setOnClickListener(onButtonClick);
+
+
+
 
         // Method to create Directory, if the Directory doesn't exists
         file = new File(DIRECTORY);
@@ -169,9 +173,27 @@ public class SignatureActivity extends AppCompatActivity  {
                     public void run() {
                         try {
                             bitmap.compress(CompressFormat.PNG, 90, mFileOutStream);
-
+                            //shared preferences
+                            Intent i = getIntent();
+                            String spatientid = i.getStringExtra("PATIENTID");
+                            String sdrugname = i.getStringExtra("DRUGNAME");
+                            String sdosage = i.getStringExtra("DOSAGE");
+                            String sconcentration = i.getStringExtra("CONCENTRATION");
+                            String spreparation = i.getStringExtra("PREPARATION");
+                            String sstartdate = i.getStringExtra("STARTDATE");
+                            String senddate = i.getStringExtra("ENDDATE");
+                            String sdoctor = i.getStringExtra("DOCTORID");
                             Intent intent = new Intent(SignatureActivity.this, MainActivity.class);
                             intent.putExtra("imagePath", StoredPath);
+                            intent.putExtra("PREVIOUS_ACTIVITY","SIGNATURE" );
+                            intent.putExtra("PATIENTID", spatientid);
+                            intent.putExtra("DRUGNAME", sdrugname);
+                            intent.putExtra("DOSAGE",sdosage);
+                            intent.putExtra("CONCENTRATION",sconcentration);
+                            intent.putExtra("PREPARATION", spreparation);
+                            intent.putExtra("STARTDATE",sstartdate);
+                            intent.putExtra("ENDDATE",senddate);
+                            intent.putExtra("DOCTORID", sdoctor);
                             startActivity(intent);
                             finish();
                             mFileOutStream.flush();
