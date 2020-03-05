@@ -30,6 +30,8 @@ import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
 import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView editdate, editstartdate, editenddate;
     Button btnSubmitData;
     String patientid, date, drugname, concentration, dosage, preparation, startdate, enddate, doctor;
+    Date dstartdate, denddate;
+    String date1, date2;
     //signature
     Button signatureButton;
     ImageView signImage;
@@ -187,7 +191,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 String date1 = dayOfMonth + "/" + month + "/" + year;
                 editstartdate.setText(date1);
                 editstartdate.setTextColor(Color.BLACK);
-
             }
         };
 
@@ -196,11 +199,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String date2 = dayOfMonth + "/" + month + "/" + year;
-               editenddate.setText(date2);
+                editenddate.setText(date2);
                 editenddate.setTextColor(Color.BLACK);
+                //code below is based on comparing date and time in date picker, https://stackoverflow.com/questions/32306177/comparing-date-and-time-in-date-picker
+                String startdate = editstartdate.getText().toString();
+                String enddate = editenddate.getText().toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                try {
+                    Date sdate = sdf.parse(startdate);
+                    Date edate = sdf.parse(enddate);
+                    if(sdate.after(edate)){
+                        Toast.makeText(MainActivity.this, "End date is before start date", Toast.LENGTH_LONG).show();
+                        editstartdate.setText("");
+                        editenddate.setText("");
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            //END
             }
         };
         //END
+
         //the code below is based on Show Current Date in android textView using Android Studio, Devodex,
         // https://www.youtube.com/watch?v=myhyZaAfJ-c
         String date_n = new SimpleDateFormat("dd/MM/YYYY", Locale.getDefault()).format(new Date());
