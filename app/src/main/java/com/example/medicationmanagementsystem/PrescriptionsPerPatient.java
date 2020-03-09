@@ -11,15 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
-
 import java.util.ArrayList;
-
+//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=hHQqFGpod14
 public class PrescriptionsPerPatient extends AppCompatActivity {
     DatabaseHelper myDB;
     ArrayList<Prescription> prescriptionList;
@@ -65,7 +62,7 @@ public class PrescriptionsPerPatient extends AppCompatActivity {
         }
     }
     //END
-
+//END
     //This code is based on SQLite Database to ListView- Part 4:Search Items- Android Studio Tutorial, KOD Dev, https://www.youtube.com/watch?v=QY-O49a_Ags
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

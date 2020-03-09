@@ -7,11 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
-
+//code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
+//ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
 public class UpdatePatient extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editfname, editsname, editpps, editdob, editaddress, editpatienttype, editpatientmedcon, editcaringid;

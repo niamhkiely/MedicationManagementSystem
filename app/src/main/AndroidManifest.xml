@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ViewPatientListContents"
             android:screenOrientation="landscape"/>
-        <activity android:name=".AdminViewPatients" />
+        <activity android:name=".AdminViewPatients"
+            android:screenOrientation="landscape"/>
         <activity android:name=".ViewListContents"
             android:screenOrientation="landscape"/>
         <activity android:name=".NewPatient"
@@ -30,11 +31,14 @@
         <activity android:name=".Register" />
         <activity android:name=".NewCaringList"/>
         <activity android:name=".ViewCaringList"/>
-        <activity android:name=".PatientsPerCaringList"/>
+        <activity android:name=".PatientsPerCaringList"
+            android:screenOrientation="landscape"/>
         <activity android:name=".UpdatePatient"/>
-        <activity android:name=".AdminPatientsPerCL"/>
+        <activity android:name=".AdminPatientsPerCL"
+            android:screenOrientation="landscape"/>
         <activity android:name=".NurseViewCaringList"/>
-        <activity android:name=".PrescriptionsPerPatient"/>
+        <activity android:name=".PrescriptionsPerPatient"
+            android:screenOrientation="landscape"/>
         <activity android:name=".DoctorHome"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".NurseHome"

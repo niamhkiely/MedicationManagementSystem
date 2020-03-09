@@ -10,14 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
-
 import java.util.ArrayList;
-
+//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=hHQqFGpod14
 public class AdminViewPatients extends AppCompatActivity {
     DatabaseHelper myDB;
     ArrayList<Patient> patientList;
@@ -59,6 +56,9 @@ public class AdminViewPatients extends AppCompatActivity {
             patientlistView.setAdapter(padapter);
             UpdatePatient();
         }}
+        //END
+    //code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
+    //ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
     public void UpdatePatient(){
         ListView patientlistView = (ListView)findViewById(R.id.patientlistview);
         patientlistView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -68,7 +68,6 @@ public class AdminViewPatients extends AppCompatActivity {
                 String patientid = txtpatientid.getText().toString();
                 Intent mainintent = new Intent(AdminViewPatients.this, UpdatePatient.class);
                 mainintent.putExtra("PATIENTID", patientid);
-                //END
                 startActivity(mainintent);
             }});
     }

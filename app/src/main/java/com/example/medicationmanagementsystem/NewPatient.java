@@ -1,5 +1,5 @@
 package com.example.medicationmanagementsystem;
-//code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge, https://www.youtube.com/watch?v=kDZES1wtKUY
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,17 +15,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
 import com.google.android.material.navigation.NavigationView;
-
 import java.util.Calendar;
 
 public class NewPatient extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NavigationView.OnNavigationItemSelectedListener{
@@ -43,6 +40,7 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
 
         myDb = new DatabaseHelper(this);
         //navigation drawer
+        //code below is based on Navigation Drawer with Fragments Part 2- Layout and Hamburger Icon, Coding In Flow, https://www.youtube.com/watch?v=zYVEMCiDcmY
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -53,7 +51,7 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        //end
+        //END
 
         editfname = findViewById(R.id.txtfname);
         editsname = findViewById(R.id.txtSName);
@@ -103,6 +101,7 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
         };
         }
         //END
+        //code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge, https://www.youtube.com/watch?v=kDZES1wtKUY
     public void AddPatientData() {
         //When user clicks submit button
         btnSubmitPatient.setOnClickListener(
@@ -136,7 +135,8 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
                 }
         );
     }
-
+    //END
+    //the code below is based on Text Spinner- Android Studio Tutorial, Coding In Flow, https://www.youtube.com/watch?v=on_OrrX7Nw4
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         TextView tv = (TextView) view;
@@ -156,7 +156,8 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
+    //END
+    //code below is based on Navigation Drawer with Fragments Part 3- Handling menu items clicks, Coding In Flow, https://www.youtube.com/watch?v=bjYstsO1PgI
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -192,6 +193,7 @@ public class NewPatient extends AppCompatActivity implements AdapterView.OnItemS
             super.onBackPressed();
         }
     }
+    //END
 }
 //END
 

@@ -2,7 +2,6 @@ package com.example.medicationmanagementsystem;
 //the code below is based on Android Canvas Tutorial – Capture Digital Signature and Save, Umesh Khandelwal, https://www.androidtutorialpoint.com/basics/android-canvas-tutorial-capture-digital-signature-and-save/
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -27,7 +26,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -11,15 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
-
 import java.util.ArrayList;
-
+//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=hHQqFGpod14
 public class PatientsPerCaringList extends AppCompatActivity {
     DatabaseHelper myDB;
     ArrayList<Patient> patientList;

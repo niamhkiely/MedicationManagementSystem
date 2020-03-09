@@ -1,6 +1,5 @@
 package com.example.medicationmanagementsystem.DAO;
-//code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge,
-//https://www.youtube.com/watch?v=kDZES1wtKUY
+
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,7 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.medicationmanagementsystem.Patient;
-
+//code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge,
+//https://www.youtube.com/watch?v=kDZES1wtKUY
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Create Database
@@ -85,6 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_PRESCRIPTION);
         onCreate(db);
     }
+    //END
     //code below is based on Login and Register | Sqlite Database | Android Studio | Part 1, Just Another Tutorial, https://www.youtube.com/watch?v=1WPAXHhG6u0
     //insert user data
     public boolean insertUserData(String email, String password, String typeofuser){
@@ -118,7 +119,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return false;
     }
-    //END
     public String checkUser(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery(
@@ -131,6 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return "";
         }
     }
+    //END
     //getting email
     public String getEmail() throws SQLException {
         String email = "";
@@ -146,7 +147,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return email;
     }
-
+    //code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge,
+    //https://www.youtube.com/watch?v=kDZES1wtKUY
     //insert caringlist data
     public boolean insertCaringListData(String timeslot, String nurseid) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -195,10 +197,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
-        //END
-
     }
-
+    //END
     //The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=8K-6gdTlGEA
     //view caring list info
     public Cursor getCaringListContents() {
@@ -305,6 +305,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return patientdata;
     }
 }
-
+//END
 
 

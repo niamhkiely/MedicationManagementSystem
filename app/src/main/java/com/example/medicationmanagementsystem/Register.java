@@ -85,6 +85,8 @@ public class Register  extends AppCompatActivity implements AdapterView.OnItemSe
         );
 
     }
+    //END
+    //the code below is based on Text Spinner- Android Studio Tutorial, Coding In Flow, https://www.youtube.com/watch?v=on_OrrX7Nw4
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         TextView tv = (TextView) view;
@@ -104,5 +106,6 @@ public class Register  extends AppCompatActivity implements AdapterView.OnItemSe
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    //END
 }
-//END
+

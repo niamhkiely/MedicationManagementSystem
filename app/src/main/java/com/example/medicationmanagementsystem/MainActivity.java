@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -28,9 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
 import com.google.android.material.navigation.NavigationView;
-
-import org.w3c.dom.Text;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -73,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        //END
+
 
         editpatientid = findViewById(R.id.txtpatientno);
         editdate = findViewById(R.id.mydateText);
@@ -85,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editenddate = findViewById(R.id.txtEndDate);
         editdoctorid = findViewById(R.id.txtDrNumber);
         btnSubmitData = findViewById(R.id.btnSubmitPrescription);
-
+        //shared preferences
         Intent intent = getIntent();
         String txtpatientid = intent.getStringExtra("PATIENTID");
         String txtdrugname = intent.getStringExtra("DRUGNAME");
@@ -152,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+        //END
         //code below is based on Android Beginner Tutorial #25- DatePicker Dialog [Choosing a Date from a Dialog Picker,
         //CodingWithMitch, https://www.youtube.com/watch?v=hwe1abDO2Ag
         editstartdate.setOnClickListener(new View.OnClickListener(){
@@ -228,7 +225,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tv_date.setText(date_n);
         tv_date.setTextSize(15);
     }
-
     //END
     //code below is based on AndroidSQLite Tutorial Android CRUD Tutorial with SQLite (Create, Read, Update, Delete), ProgrammingKnowledge,
     //https://www.youtube.com/watch?v=kDZES1wtKUY
@@ -267,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         );
     }
     //NAVIGATION
+    //code below is based on Navigation Drawer with Fragments Part 3- Handling menu items clicks, Coding In Flow, https://www.youtube.com/watch?v=bjYstsO1PgI
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -302,5 +299,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+    //END
 }
 //END

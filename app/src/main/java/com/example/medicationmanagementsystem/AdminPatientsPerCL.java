@@ -12,15 +12,12 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.medicationmanagementsystem.DAO.DatabaseHelper;
-
 import java.util.ArrayList;
-
+//The code below is based on Adding multiple columns to your ListView, CodingWithMitch, https://www.youtube.com/watch?v=hHQqFGpod14
 public class AdminPatientsPerCL extends AppCompatActivity {
     DatabaseHelper myDB;
     ArrayList<Patient> patientList;
@@ -38,7 +35,7 @@ public class AdminPatientsPerCL extends AppCompatActivity {
         //setting layout
         setContentView(R.layout.admin_viewpatients);
         ListView patientlistView = (ListView)findViewById(R.id.patientlview);
-        //btnAddPatientsToCaring = (Button)findViewById(R.id.btnAddNewPatients);
+
         //The code below based on android listview header, CodeVideo, https://www.youtube.com/watch?v=EnG5ZIVfki8
         ViewGroup headerview = (ViewGroup)getLayoutInflater().inflate(R.layout.viewpatient_header, patientlistView, false);
         patientlistView.addHeaderView(headerview);
@@ -69,6 +66,7 @@ public class AdminPatientsPerCL extends AppCompatActivity {
             patientlistView.setAdapter(padapter);
             UpdateCaringList();
         }}
+        //END
         //code below based on Android SQLite Database Tutorial 5 # Update values in SQLite Database table using Android,
         //ProgrammingKnowledge, https://www.youtube.com/watch?v=PA4A9IesyCg&t=783s
         public void UpdateCaringList(){
@@ -104,16 +102,9 @@ public class AdminPatientsPerCL extends AppCompatActivity {
                     AlertDialog alert = a_builder.create();
                     alert.setTitle("Alert");
                     alert.show();
-                    //END
                 }
             });
-        //btnAddPatientsToCaring.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View view) {
-                //Intent createcaringlist= new Intent(AdminPatientsPerCL.this, NewCaringList.class);
-                //startActivity(createcaringlist);
-            //}}
-        //);
+            //END
     }
-    //END
+
 }
